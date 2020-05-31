@@ -5,9 +5,9 @@ from os import environ
 
 
 
-api_token = 'XXX' # your Hetzner DNS-API Token
-
-
+f = open("hetzner-auth-token.txt", "r")
+api_token = f.read() # your Hetzner DNS-API Token
+f.close()
 headers = {'Auth-API-Token': api_token, 'Content-Type': 'application/json'}
 response = requests.get('https://dns.hetzner.com/api/v1/zones', headers=headers)
 zone_id = [x for x in json.loads(response.content.decode('utf-8'))['zones'] if x['name'] == environ['CERTBOT_DOMAIN']][0]['id']

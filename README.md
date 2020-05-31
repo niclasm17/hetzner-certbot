@@ -7,7 +7,7 @@ Thankfully, the certbot container ships with python3 and the neccessery modules,
 ## Usage
 
 - Save the files somewhere on your server, i.e: `/home/user/certbot/hetzner`
-- Edit the `auth_token` variable
+- Edit the `hetzner-auth-token` file and paste your DNS auth token there
 - Run `docker` command
 - (Optional) configure `crontab` to run the script automatically
 
